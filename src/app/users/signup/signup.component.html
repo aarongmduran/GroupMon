@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<form class="col-12 col-s-12 col-t-12 loginForm">
+    <h1 style="text-align: center;">Regístrate</h1>
+    <div class="col-12 col-s-12 col-t-12 emailIn">
+        <mat-form-field>
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput #userEmail required>
+        </mat-form-field>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 passwordIn">
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" #userPassword required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 acceptTerms">
+        <mat-checkbox [value]="isCheck">Acepto los términos y condiciones</mat-checkbox>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 loginIn">
+        <button mat-raised-button (click)="register(userEmail.value, userPassword.value)" class="buttonLogIn">Registrarse</button>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 notLogged">
+        ¿Ya tienes cuenta? <a routerLink="/signin">Inicia sesión</a>
+    </div>
+  </form>
+  <app-footer></app-footer>

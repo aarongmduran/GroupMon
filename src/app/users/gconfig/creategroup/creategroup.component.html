@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Crear grupo nuevo</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput #groupName placeholder="Nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput #groupDescription placeholder="Descripción">
+  </mat-form-field>
+  <input type="file" (change)="onUpload($event)">
+  <input #imageUser type="hidden" [value]="urlImage | async">
+  <input type="color" #groupColor class="colorSelector">
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+  <div class="col-12 col-s-12 col-t-12 loginIn">
+    <button *ngIf="urlImage | async; else btnDisabled" mat-button [mat-dialog-close]="null" (click)="newGroup(groupName.value,groupDescription.value, inputImageUser.nativeElement.value, groupColor.value)">Crear</button>
+    <ng-template #btnDisabled>
+        <button disabled="true" mat-button [mat-dialog-close]="null" (click)="newGroup(groupName.value,groupDescription.value, inputImageUser.nativeElement.value, groupColor.value)">Crear</button>
+    </ng-template>
+  </div>
+</div>

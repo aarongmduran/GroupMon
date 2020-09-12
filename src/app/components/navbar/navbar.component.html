@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
+</head>
+
+<mat-toolbar class = "col-12 col-t-12 col-s-12 header">
+    <div class="col-4 col-t-6 col-s-6  icon">
+        <div class="col-12 col-t-12 col-s-12 logo" routerLink="/home">
+            <img class="logito" [src]=logoW>
+        </div>
+    </div>
+    <div class="col-8 col-t-12 col-s-12 buttons">
+        <div class="col-4 col-t-12 col-s-12 button"><a mat-button class="click" routerLink="/home">Inicio</a></div>
+        <div class="col-4 col-t-12 col-s-12 button"><a mat-button class="click" routerLink="/signin">Inicia sesión</a></div>
+        <div class="col-4 col-t-12 col-s-12 button"><a mat-button id="signUpHeader" routerLink="/register">Únete</a></div>
+    </div> 
+</mat-toolbar>
+<div class="col-t-12 col-s-12 hamburgerMenu">
+    <div class="col-t-12 col-s-12 hamTop">
+        <div class="col-t-3 col-s-3 iconMenu">
+            <i (click) = "Testing()" class="fas fa-bars" id="fafa"></i>
+        </div>
+        <div class="col-t-9 col-s-9 logoMenu">
+    
+        </div>
+    </div>
+    <div class="col-t-12 col-s-12 list">
+        <div class="col-t-12 col-s-12 hamEnlace">
+            <a routerLink="/home">Inicio</a>
+        </div>
+        <div class="col-t-12 col-s-12 hamEnlace">
+            <a routerLink="/signin">Iniciar sesión</a>
+        </div>
+        <div class="col-t-12 col-s-12 hamEnlace">
+            <a routerLink="/register">Registrarse</a>
+        </div>
+    </div>
+</div>
+

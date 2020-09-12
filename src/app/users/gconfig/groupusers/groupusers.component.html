@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Usuarios del grupo</h1>
+<h4 *ngFor="let usuarios of getUsuariosGrupo()">
+    {{usuarios}}
+</h4>
+<div mat-dialog-content>
+  <h3><b>Añade un nuevo usuario</b></h3>
+  <mat-form-field>
+    <input matInput #newUserName placeholder="Nombre del usuario">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput #newUserMail placeholder="Correo">
+  </mat-form-field>
+  <div class="chipAddContent">
+        <button mat-button class="chipAdd" (click)="newUser(this.data.id,newUserName.value,newUserMail.value)">Añadir</button>
+  </div>
+</div>
+
+<div mat-dialog-actions class="closeButton">
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+</div>

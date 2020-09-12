@@ -1,0 +1,25 @@
+<app-navbar-user></app-navbar-user>
+
+<div class="col-12 col-s-12 col-t-12 totalGroups">
+  <div *ngFor="let grupo of groups" class="col-3 col-s-12 col-t-4 grupoInd">
+    <mat-card class="groupCard">
+      <mat-card-header (click)="openGroup(grupo.id)">
+        <div mat-card-avatar [ngStyle]="{'background-color': grupo.data.grupoColor}"></div>
+        <mat-card-title>{{grupo.data.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{grupo.data.dinero}}€</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{grupo.data.photoGroup}}" (click)="openGroup(grupo.id)">
+      <mat-card-content (click)="openGroup(grupo.id)">
+        {{grupo.data.descripcion}}
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="openUsers(grupo.id)">Usuarios</button>
+        <button mat-button (click)="deleteGroup(grupo.id)">Eliminar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-3 col-s-12 col-t-4 grupoAdd">
+    <button mat-fab class="grupoAddB" (click)="openDialog()">+</button>
+  </div>
+</div>
+<app-footer></app-footer>

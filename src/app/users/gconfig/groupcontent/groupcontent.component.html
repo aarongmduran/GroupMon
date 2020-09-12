@@ -1,0 +1,51 @@
+<div mat-dialog-actions class="closeButton">
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+</div>
+<div mat-dialog-title>
+    
+    <div class="col-12 col-s-12 col-t-12 groupNameBox">
+        <p class="groupName">{{this.getGroupById(this.data.id).data.nombre}}</p>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 groupMoney">
+        <p class="groupAmount">{{this.moneyGroup}} €</p>
+    </div>
+</div>
+
+<div mat-mat-dialog-content class="col-12 col-s-12 col-t-12 groupInfo">
+    <div class="col-12 col-s-12 col-t-12 newPayment">
+        <div class="col-12 col-s-12 col-t-12 introduceMoney">
+            <mat-form-field class="col-s-12 col-12 col-t-12 money">
+                <input matInput #money type="number" placeholder="Cantidad">
+            </mat-form-field>
+            <div class="col-s-1 col-12 col-t-12 connectorDiv">
+                <mat-form-field class="connector">
+                    <mat-select [(value)]="selected">
+                        <mat-option value="para">para</mat-option>
+                        <mat-option value="en">en</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <mat-form-field class="col-s-12 col-12 col-t-12 money">
+                <input matInput #concepto type="text" placeholder="Concepto">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-s-12 col-t-12 submitMoney">
+            <div class="col-6 col-s-6 col-t-6">
+                <button mat-raised-button (click)="increaseAmount(money.value, concepto.value, this.data.id, selected)">Ingresar</button>
+            </div>
+            <div class="col-6 col-s-6 col-t-6">
+                <button mat-raised-button (click)="decreaseAmount(money.value, concepto.value, this.data.id, selected)">Gastar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-s-12 col-t-12 payments">
+        <div *ngFor="let move of this.getMovements(this.data.id)">
+            <p>{{move}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- <div mat-dialog-actions class="col-12 col-s-12 col-t-12">
+    <button mat-raised-button (click)="onNoClick()">Cerrar</button>
+</div> -->

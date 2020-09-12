@@ -1,0 +1,28 @@
+<button (click)="onNoClick()">Cerrar</button>
+<div class="col-12 col-s-12 col-t-12 profile" *ngIf="authService.userData as user">
+    <div class="col-12 col-s-12 col-t-12 name">
+      <h1><b>Hola, {{user.displayName}}</b></h1> 
+    </div>
+    <div class="col-12 col-s-12 col-t-12 avatarCont">
+        <img class="avatar" src="{{user.photoURL}}">
+    </div>
+</div>
+<div class="col-12 col-s-12 col-t-12 editProfile" *ngIf="authService.userData as user">
+    <div class="col-12 col-s-12 col-t-12">
+        <button mat-raised-button class="buttons" (click)="passTog()">Cambiar contraseña</button>
+        <div *ngIf="pass" class="buttons">
+            <mat-form-field>
+                <input matInput #newPass placeholder="Nueva contraseña">
+            </mat-form-field>
+            <button mat-mini-fab color="accent" class="okButton" (click)="authService.ChangePassword(newPass.value)">Ok</button>
+        </div>
+    </div>
+    <div class="col-12 col-s-12 col-t-12">
+        <button mat-raised-button class="buttons" (click)="delToggle()">Eliminar</button>
+        <div *ngIf="del">
+            <a class="seguro">¿Seguro?</a>
+            <button mat-mini-fab color="accent" class="okButton" (click)="eliminarUsuario()">Si</button>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,172 @@
+
+/* Elementos de la grid view */
+* {
+	box-sizing: border-box;
+}
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+[class*="col-"] {
+	float: left;
+}
+
+  /* Header */
+  .header{
+    background-color: #19BD96;
+    height: 70px;
+    position: fixed;
+    z-index: 100;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  float: left;
+  height: 100px;
+}
+
+.logito{
+  height: 60%;
+  weight: 60%;
+}
+
+  .buttons{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      .button{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  #signUpHeader{
+      background-color: #7F6CEC;
+      border: none;
+      transition: transform .2s;
+      box-shadow: none;
+      width: 80%;
+      font-size: 18px;
+  }
+  #signUpHeader:hover{
+    transform: scale(1.2);
+    border: none;
+    box-shadow: none;
+}
+.click{
+    transition: transform .2s;
+    width: 80%;
+    font-size: 18px;
+}
+  .click:hover{
+    background-color: white;
+    color:#19BD96;
+    transform: scale(1.2);
+  }
+
+  .hamburgerMenu{
+    background-color: #19BD96;
+    height: 50px;
+    position: fixed;
+    z-index: 100;
+  }
+  .iconMenu{
+    background-color: #19BD96;
+      height: 50px;
+      display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #fafa{
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+  }
+  .logoMenu{
+    background-color: #19BD96;
+      height: 50px;
+  }
+  .list{
+    display: none;
+    background-color: #19BD96;
+  }
+  .hamEnlace{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 50px;
+  }
+  
+  .hamEnlace a{
+    color: white;
+    text-decoration: none;
+    border-bottom: solid transparent;
+    font-size: 20px;
+  }
+  
+  /* Responsive */
+  /* Desktop */
+  @media only screen and (min-width: 769px) {
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-10-8 {width: 90%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+    .hamburgerMenu{
+        display: none;
+    }
+  }
+    /* Tablet */
+  @media only screen and (min-width:601px) and (max-width: 768px) {
+      .col-t-1 {width: 8.33%;}
+      .col-t-2 {width: 16.66%;}
+      .col-t-3 {width: 25%;}
+      .col-t-4 {width: 33.33%;}
+      .col-t-5 {width: 41.66%;}
+      .col-t-6 {width: 50%;}
+      .col-t-7 {width: 58.33%;}
+      .col-t-8 {width: 66.66%;}
+      .col-t-9 {width: 75%;}
+        .col-t-10 {width: 83.33%;}
+      .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+    .header{
+        background-color: blue;
+        height: 90px;
+        display: none;
+    }
+
+  }
+/* Mobile */
+  @media only screen and (max-width: 600px) {
+      .col-s-1 {width: 8.33%;}
+      .col-s-2 {width: 16.66%;}
+      .col-s-3 {width: 25%;}
+      .col-s-4 {width: 33.33%;}
+      .col-s-5 {width: 41.66%;}
+      .col-s-6 {width: 50%;}
+      .col-s-7 {width: 58.33%;}
+      .col-s-8 {width: 66.66%;}
+      .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-10-8 {width: 90%;}
+      .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    .header{
+        background-color: pink;
+        height: 90px;
+        display: none;
+    }
+  }

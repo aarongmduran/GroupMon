@@ -1,0 +1,377 @@
+/* Elementos de la grid view */
+* {
+	box-sizing: border-box;
+}
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+[class*="col-"] {
+	float: left;
+}
+
+.imageBack{
+    position: relative;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+.imageBack img{
+    height: 70vh;
+    width: 100%;
+}
+.title{
+    position: absolute;
+    padding-top: 130px;
+    height: 100px;
+    width: 90%;
+    line-height: 50px;
+    color: #19BD96;
+    font-size: 50px;
+}
+
+.buttons{
+    padding-top: 80px;
+    position: absolute;
+    margin-top: 200px;
+    width:55%;
+}
+.button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonint{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    font-size: 30px;
+    transition: transform .2s;
+}
+.buttonint:hover{
+    transform: scale(1.2);
+}
+#button1{
+    background-color: #19BD96;
+    color: white;
+}
+#button2{
+    background-color: #7F6CEC;
+    color: white;
+}
+.opinionesBox{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.opinionName, .opinionStars, .opinionDesc{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.opinionStars{
+    margin-top: 17px;
+}
+.opinionDesc{
+    text-align: center;
+}
+.clientesBox{
+    background-color: #19BD96;
+    overflow: hidden;
+    max-height: 80px;
+    -webkit-transition: all 1s ease-in-out;
+}
+.clientesBox:hover{
+    background-color: #19BD96;
+    overflow: hidden;
+    max-height: 800px;
+}
+.clienteInt{
+    width: 240px;
+    max-height: 320px;
+    -webkit-transition: all 1s ease-in-out;
+    flex-direction: column;
+    border:2px solid white;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.clienteImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clienteInt:hover{
+    max-height: 550px;
+}
+#cliente1{
+    float: right;
+}
+#cliente2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textoClientes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.textoClientes p{
+    font-size: 25px;
+    color:white;
+}
+.clientesBox img{
+    height: 320px;
+}
+.clientesBox img:hover{
+    z-index: 99;
+
+    border: none;
+}
+.clienteText{
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    text-align: justify;
+}
+.colaboradoresBox{
+    background-color: white;
+    overflow: hidden;
+    max-height: 80px;
+    margin-bottom: 20px;
+    -webkit-transition: all 1s ease-in-out;
+}
+.colaboradoresBox:hover{
+    overflow: hidden;
+    max-height: 800px;
+}
+.tituloColaboradores{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.tituloColaboradores p{
+    font-size: 25px;
+    color:#19BD96;
+}
+.textoColaboradores{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.textCol{
+    margin-bottom: 20px;
+}
+.textCol p{
+    text-align: justify;
+    line-height : 2;
+    font-size: 18px;
+}
+#textMot{
+    text-align: center;
+}
+.colaborador{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.colaborador img{
+    height: 50px;
+}
+.colaboradores{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.negocioBox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.negocioText{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.negocioImage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.negocioImage img{
+    height: 400px;
+}
+.negText p{
+    text-align: justify;
+    line-height : 2;
+    font-size: 23px;
+}
+  /* Responsive */
+  /* Desktop */
+  @media only screen and (min-width: 769px) {
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-10-8 {width: 90%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+
+    .imageBack{
+        position: relative;
+        text-align: center;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageBack img{
+        height: 100vh;
+        width: 100%;
+    }
+    .title{
+        position: absolute;
+        padding-top: 0px;
+        height: 100px;
+        width: 90%;
+        line-height: 50px;
+        color: #19BD96;
+        font-size: 50px;
+    }
+  }
+    /* Tablet */
+  @media only screen and (min-width:601px) and (max-width: 768px) {
+      .col-t-1 {width: 8.33%;}
+      .col-t-2 {width: 16.66%;}
+      .col-t-3 {width: 25%;}
+      .col-t-4 {width: 33.33%;}
+      .col-t-5 {width: 41.66%;}
+      .col-t-6 {width: 50%;}
+      .col-t-7 {width: 58.33%;}
+      .col-t-8 {width: 66.66%;}
+      .col-t-9 {width: 75%;}
+        .col-t-10 {width: 83.33%;}
+      .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+    .title{
+        position: absolute;
+        color: #19BD96;
+        font-size: 50px;
+    }
+    #button2{
+        margin-top: 50px;
+    }
+    .clientesBox img{
+        height: 280px;
+    }
+    .clienteInt{
+        width: 210px;
+        max-height: 280px;
+    }
+    .negocioBox{
+        flex-direction: column;
+    }
+    .negocioImage img{
+        height: 350px;
+    }
+    .negText{
+        padding: 20px;
+    } 
+    .colaborador img{
+        height: 35px;
+    }
+    .textCol{
+        padding: 25px;
+    }
+  }
+/* Mobile */
+  @media only screen and (max-width: 600px) {
+      .col-s-1 {width: 8.33%;}
+      .col-s-2 {width: 16.66%;}
+      .col-s-3 {width: 25%;}
+      .col-s-4 {width: 33.33%;}
+      .col-s-5 {width: 41.66%;}
+      .col-s-6 {width: 50%;}
+      .col-s-7 {width: 58.33%;}
+      .col-s-8 {width: 66.66%;}
+      .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-10-8 {width: 90%;}
+      .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    .title{
+        position: absolute;
+        color: #19BD96;
+        font-size: 45px;
+    }
+    .titleText{
+        font-size: 30px;
+    }
+    .buttonint{
+        font-size: 26px;
+    }
+    #button2{
+        margin-top: 30px;
+    }
+    .opinion{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    .clientesBox:hover{
+        max-height: 2500px;
+    }
+    .cliente{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .textCol{
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .textCol p{
+        text-align: justify;
+        line-height : 2;
+        font-size: 15px;
+    }
+    .colab {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .colaboradoresBox:hover {
+        max-height: 1500px;
+    }
+    .colaborador img{
+        height: 40px;
+    }
+    .negocioBox{
+        flex-direction: column;
+    }
+    .negocioImage img{
+        height: 220px;
+    }
+    .negText{
+        padding: 20px;
+    } 
+    .negText p{
+        text-align: justify;
+        line-height : 2;
+        font-size: 16px;
+    }    
+
+  }

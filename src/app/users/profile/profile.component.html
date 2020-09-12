@@ -1,0 +1,38 @@
+<app-navbar-user></app-navbar-user>
+
+<div class="col-s-12 col-t-12 col-12 userContent">
+  <p class="nameUser">Hola, <b>{{this.userName}}</b></p>
+  <i class="fas fa-users goGroups" routerLink="/groups"></i>
+  <p class="moneyUser">Tienes: <a class="amount"><b>{{this.userMoney}} €</b></a> </p>
+</div>
+
+<div mat-mat-dialog-content class="col-12 col-s-12 col-t-12 userInfo">
+  <div class="col-12 col-s-12 col-t-12 newPayment">
+      <div class="col-12 col-s-12 col-t-12 introduceMoney">
+          <mat-form-field class="money">
+              <input matInput #money type="number" placeholder="Cantidad">
+          </mat-form-field>
+          <mat-form-field class="connector">
+              <mat-select [(value)]="selected">
+                  <mat-option value="para">para</mat-option>
+                  <mat-option value="en">en</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field class="money">
+              <input matInput #concepto type="text" placeholder="Concepto">
+          </mat-form-field>
+      </div>
+      <div class="col-12 col-s-12 col-t-12 submitMoney">
+        <button mat-raised-button class="buttonClick"(click)="increaseAmount(money.value, concepto.value, selected)">Ingresar</button>
+        <button mat-raised-button class="buttonClick"(click)="decreaseAmount(money.value, concepto.value, selected)">Gastar</button>
+      </div>
+  </div>
+
+  <div class="col-12 col-s-12 col-t-12 payments">
+      <div *ngFor="let move of this.getMovements()">
+          <p></p>
+          <p>{{move}}</p>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>

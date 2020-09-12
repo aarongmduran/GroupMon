@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<form class="col-12 col-s-12 col-t-12 loginForm">
+    <h1 style="text-align: center;">Se nos olvidaba, ¡dinos tu nombre!</h1>
+    <div class="col-12 col-s-12 col-t-12 emailIn">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput #displayName required>
+        </mat-form-field>
+    </div>
+    <div class="col-12 col-s-12 col-t-12 emailIn">
+        <h4>Selecciona una imagen</h4>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+    </div>
+    <input #imageUser type="hidden" [value]="urlImage | async">
+    <div class="col-12 col-s-12 col-t-12 loginIn">
+        <button *ngIf="urlImage | async; else btnDisabled" mat-raised-button (click)="authService.FinishLoginInfo(displayName.value, inputImageUser.nativeElement.value)" class="buttonLogIn">¡Listo!</button>
+        <ng-template #btnDisabled>
+            <button disabled="true" mat-raised-button (click)="authService.FinishLoginInfo(displayName.value, inputImageUser.nativeElement.value)" class="buttonLogIn">¡Listo!</button>
+        </ng-template>
+    </div>
+</form>
