@@ -1,5 +1,7 @@
 # GroupMon
 
+GroupMon is my first project using a JavaScript framework, in this case, Angular. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Development server
